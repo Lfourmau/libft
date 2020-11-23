@@ -12,6 +12,11 @@
 
 #include <unistd.h>
 
+void ft_putchar_fd(char c, int fd)
+{
+	write(fd, &c, 1);
+}
+
 void ft_putnbr_fd(int n, int fd)
 {
 	long int nb;
@@ -23,11 +28,11 @@ void ft_putnbr_fd(int n, int fd)
 		nb *= -1;
 	}
 	if (nb >= 10)
-		ft_putnbr_fd(nb, fd);
+		ft_putnbr_fd(nb / 10, fd);
 	ft_putchar_fd(nb % 10 + 48, fd);
 }
 
 int main()
 {
-	ft_putnbr_fd(21473, 1);
+	ft_putnbr_fd(-2147483648, 1);
 }
