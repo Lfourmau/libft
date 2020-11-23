@@ -1,18 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lfourmau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/23 11:18:49 by lfourmau          #+#    #+#             */
-/*   Updated: 2020/11/23 11:18:58 by lfourmau         ###   ########lyon.fr   */
+/*   Created: 2020/11/23 14:34:07 by lfourmau          #+#    #+#             */
+/*   Updated: 2020/11/23 14:37:13 by lfourmau         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isalpha(char c)
+#include <unistd.h>
+
+void ft_putstr_fd(char *s, int fd)
 {
-	if ((c <= 'z' && c >= 'a') || (c <= 'Z' && c >= 'A'))
-		return (1);
-	return (0);
+	int i;
+
+	i = 0;
+	while (s[i])
+	{
+		write(fd, &s[i], 1);
+		i++;
+	}
 }

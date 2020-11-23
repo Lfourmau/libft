@@ -1,18 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lfourmau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/23 11:18:49 by lfourmau          #+#    #+#             */
-/*   Updated: 2020/11/23 11:18:58 by lfourmau         ###   ########lyon.fr   */
+/*   Created: 2020/11/23 13:50:40 by lfourmau          #+#    #+#             */
+/*   Updated: 2020/11/23 14:16:48 by lfourmau         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isalpha(char c)
+char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	if ((c <= 'z' && c >= 'a') || (c <= 'Z' && c >= 'A'))
-		return (1);
-	return (0);
+	int i;
+	char *tab;
+	f = &f;
+
+	tab = malloc(ft_strlen(s) * sizeof(char));
+	if (tab == NULL)
+		return (NULL);
+	while (s[i])
+	{
+		tab[i] = (*f)(s[i]); //quel arg donner pour le unsigned int du prototype ?
+		i++;
+	}
+	return (tab);
 }
