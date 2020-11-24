@@ -6,13 +6,15 @@
 /*   By: lfourmau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 11:22:43 by lfourmau          #+#    #+#             */
-/*   Updated: 2020/11/23 11:22:45 by lfourmau         ###   ########lyon.fr   */
+/*   Updated: 2020/11/24 15:52:54 by lfourmau         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_strncmp(char *str1, char *str2, int n)
+#include "libft.h"
+
+int ft_strncmp(const char *str1, const char *str2, size_t n)
 {
-	int i;
+	size_t i;
 	i = 0;
 	while ((str1[i] && str2[i]) && i <= n)
 	{

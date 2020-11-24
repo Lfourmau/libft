@@ -6,11 +6,11 @@
 /*   By: lfourmau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 14:34:07 by lfourmau          #+#    #+#             */
-/*   Updated: 2020/11/23 14:37:13 by lfourmau         ###   ########lyon.fr   */
+/*   Updated: 2020/11/24 13:54:18 by lfourmau         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
 void ft_putstr_fd(char *s, int fd)
 {

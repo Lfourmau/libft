@@ -6,11 +6,13 @@
 /*   By: lfourmau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 11:24:06 by lfourmau          #+#    #+#             */
-/*   Updated: 2020/11/23 11:24:08 by lfourmau         ###   ########lyon.fr   */
+/*   Updated: 2020/11/24 13:57:56 by lfourmau         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-char ft_toupper(char c)
+#include "libft.h"
+
+int ft_toupper(int c)
 {
 	if (c >= 'a' && c <= 'z')
 		return (c - 32);

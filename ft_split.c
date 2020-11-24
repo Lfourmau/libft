@@ -6,11 +6,13 @@
 /*   By: lfourmau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 11:21:18 by lfourmau          #+#    #+#             */
-/*   Updated: 2020/11/23 11:21:21 by lfourmau         ###   ########lyon.fr   */
+/*   Updated: 2020/11/24 16:00:43 by lfourmau         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-char **ft_split(char *str, char sep)
+#include "libft.h"
+
+char **ft_split(char const *str, char sep)
 {
 	char **chains;
 	char *start;
@@ -26,7 +28,7 @@ char **ft_split(char *str, char sep)
 	{
 		while (*str && *str == sep)
 			str++;
-		start = str;
+		start = (char *)str;
 		while (*str && *str != sep)
 			str++;
 		chains[i] = malloc(str - start + 1);

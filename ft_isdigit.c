@@ -6,11 +6,13 @@
 /*   By: lfourmau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 11:19:22 by lfourmau          #+#    #+#             */
-/*   Updated: 2020/11/23 11:19:24 by lfourmau         ###   ########lyon.fr   */
+/*   Updated: 2020/11/24 13:51:32 by lfourmau         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isdigit(char c)
+#include "libft.h"
+
+int ft_isdigit(int c)
 {
 	if (c <= '9' && c >= '0')
 			return (1);

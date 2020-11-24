@@ -6,9 +6,11 @@
 /*   By: lfourmau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 11:19:30 by lfourmau          #+#    #+#             */
-/*   Updated: 2020/11/23 11:19:33 by lfourmau         ###   ########lyon.fr   */
+/*   Updated: 2020/11/24 13:51:46 by lfourmau         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int ft_isprint(int nbr)
 {

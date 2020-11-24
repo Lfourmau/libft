@@ -6,11 +6,13 @@
 /*   By: lfourmau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 11:19:57 by lfourmau          #+#    #+#             */
-/*   Updated: 2020/11/23 11:20:21 by lfourmau         ###   ########lyon.fr   */
+/*   Updated: 2020/11/24 15:38:39 by lfourmau         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_nbdigits_itoa(int n)
+#include "libft.h"
+
+static int ft_nbdigits_itoa(int n)
 {
 	int i;
 
@@ -29,7 +31,7 @@ int ft_nbdigits_itoa(int n)
 	return (i);
 }
 
-char *ft_recursive_itoa(int nb, char *result, int index)
+static char *ft_recursive_itoa(int nb, char *result, int index)
 {
 	if (nb >= 10)
 		ft_recursive_itoa(nb / 10, result,  index - 1);

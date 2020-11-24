@@ -6,13 +6,15 @@
 /*   By: lfourmau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 11:17:11 by lfourmau          #+#    #+#             */
-/*   Updated: 2020/11/23 11:17:15 by lfourmau         ###   ########lyon.fr   */
+/*   Updated: 2020/11/24 15:38:06 by lfourmau         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-void ft_bzero(void *str, unsigned int n)
+#include "libft.h"
+
+void ft_bzero(void *str, size_t n)
 {
-	int i;
+	size_t i;
 	char *tab;
 
 	i = 0;

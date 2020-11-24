@@ -6,13 +6,15 @@
 /*   By: lfourmau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 11:17:45 by lfourmau          #+#    #+#             */
-/*   Updated: 2020/11/23 11:18:40 by lfourmau         ###   ########lyon.fr   */
+/*   Updated: 2020/11/24 15:46:59 by lfourmau         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-void *ft_memset(void *memzone, int octet, unsigned int len)
+#include "libft.h"
+
+void *ft_memset(void *memzone, int octet, size_t len)
 {
-	int i;
+	size_t i;
 	char *tab;
 
 	i = 0;

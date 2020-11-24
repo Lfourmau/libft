@@ -6,13 +6,15 @@
 /*   By: lfourmau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 11:20:41 by lfourmau          #+#    #+#             */
-/*   Updated: 2020/11/23 11:20:45 by lfourmau         ###   ########lyon.fr   */
+/*   Updated: 2020/11/24 15:41:53 by lfourmau         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_samechar_memccpy(char *str, int c, unsigned int n)
+#include "libft.h"
+
+static int ft_samechar_memccpy(char *str, int c, unsigned int n)
 {
-	int i;
+	unsigned int i;
 
 	i = 0;
 	while (str[i] && i < n)
@@ -25,9 +27,9 @@ int ft_samechar_memccpy(char *str, int c, unsigned int n)
 }
 
 //memes valeurs de reoutr mais a revoir ++
-void *ft_memccpy(void *dst, void *src, int c, unsigned int n)
+void *ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
-	int i;
+	size_t i;
 	int j;
 	char *source;
 	char *dest;
@@ -35,7 +37,7 @@ void *ft_memccpy(void *dst, void *src, int c, unsigned int n)
 	i = 0;
 	j = 0;
 	dest = dst;
-	source = src;
+	source = (char*)src;
 	if (ft_samechar_memccpy(source, c, n) == 0)
 		return (NULL);
 	while (i <= n && *source != c)

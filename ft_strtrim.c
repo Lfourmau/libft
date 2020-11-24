@@ -6,11 +6,13 @@
 /*   By: lfourmau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 11:23:19 by lfourmau          #+#    #+#             */
-/*   Updated: 2020/11/23 11:23:21 by lfourmau         ###   ########lyon.fr   */
+/*   Updated: 2020/11/24 15:59:54 by lfourmau         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_same_char_strtrim(char *set, char c)
+#include "libft.h"
+
+int ft_same_char_strtrim(const char *set, char c)
 {
 	int i;
 
@@ -25,7 +27,7 @@ int ft_same_char_strtrim(char *set, char c)
 }
 
 //malloc a revoir (pas très propre)
-char *ft_strtrim(char *str, char *set)
+char *ft_strtrim(char const *str, char const *set)
 {
 	char *start;
 	char *cpy;
@@ -33,7 +35,7 @@ char *ft_strtrim(char *str, char *set)
 	cpy = malloc(ft_strlen(str));
 	while (ft_same_char_strtrim(set, *str))
 		str++;
-	start = str;
+	start = (char *)str;
 	while (*str)
 		str++;
 	str--; //sinon dernier carac coupé

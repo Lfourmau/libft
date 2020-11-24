@@ -6,11 +6,13 @@
 /*   By: lfourmau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 11:23:55 by lfourmau          #+#    #+#             */
-/*   Updated: 2020/11/23 11:23:57 by lfourmau         ###   ########lyon.fr   */
+/*   Updated: 2020/11/24 13:57:45 by lfourmau         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-char ft_tolower(char c)
+#include "libft.h"
+
+int ft_tolower(int c)
 {
 	if (c >= 'A' && c <= 'Z')
 		return (c + 32);

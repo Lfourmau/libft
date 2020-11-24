@@ -6,11 +6,13 @@
 /*   By: lfourmau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 11:18:49 by lfourmau          #+#    #+#             */
-/*   Updated: 2020/11/23 11:18:58 by lfourmau         ###   ########lyon.fr   */
+/*   Updated: 2020/11/24 13:51:08 by lfourmau         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isalpha(char c)
+#include "libft.h"
+
+int ft_isalpha(int c)
 {
 	if ((c <= 'z' && c >= 'a') || (c <= 'Z' && c >= 'A'))
 		return (1);

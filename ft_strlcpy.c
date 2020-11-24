@@ -6,13 +6,15 @@
 /*   By: lfourmau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 11:22:19 by lfourmau          #+#    #+#             */
-/*   Updated: 2020/11/23 11:22:21 by lfourmau         ###   ########lyon.fr   */
+/*   Updated: 2020/11/24 15:51:03 by lfourmau         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-char *ft_strlcpy(char *dest, char *src, int size)
+#include "libft.h"
+
+char *ft_strlcpy(char *dest, const char *src, size_t size)
 {
-	int i;
+	size_t i;
 	i = 0;
 	while (src[i] && i < size -1)
 	{

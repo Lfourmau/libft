@@ -6,11 +6,13 @@
 /*   By: lfourmau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 11:21:42 by lfourmau          #+#    #+#             */
-/*   Updated: 2020/11/23 11:21:44 by lfourmau         ###   ########lyon.fr   */
+/*   Updated: 2020/11/24 15:49:39 by lfourmau         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-char *ft_strdup(char *str)
+#include "libft.h"
+
+char *ft_strdup(const char *str)
 {
 	int i;
 	char *cpy;

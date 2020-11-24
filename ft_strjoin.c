@@ -6,12 +6,14 @@
 /*   By: lfourmau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 11:21:51 by lfourmau          #+#    #+#             */
-/*   Updated: 2020/11/23 11:21:55 by lfourmau         ###   ########lyon.fr   */
+/*   Updated: 2020/11/24 13:55:04 by lfourmau         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 //Vérifier si c'est bien ce qui est attendu
-char *ft_strjoin(char *prefixe, char *suffixe)
+char *ft_strjoin(char const *prefixe, char const *suffixe)
 {
 	char *concat;
 	int i;
