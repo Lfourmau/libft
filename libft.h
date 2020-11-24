@@ -12,7 +12,7 @@ char *ft_strchr(const char *str, int c);
 char *ft_strdup(const char *str);
 char *ft_strjoin(char const *prefixe, char const *suffixe);
 unsigned int ft_strlcat(char *dst, const char *src, size_t dstsize);
-char *ft_strlcpy(char *dest, const char *src, size_t size);
+size_t ft_strlcpy(char *dest, const char *src, size_t size);
 size_t ft_strlen(const char *str);
 char *ft_strmapi(char const *s, char (*f)(unsigned int, char));
 int ft_strncmp(const char *str1, const char *str2, size_t n);
