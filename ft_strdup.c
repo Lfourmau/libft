@@ -6,7 +6,7 @@
 /*   By: lfourmau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 11:21:42 by lfourmau          #+#    #+#             */
-/*   Updated: 2020/11/24 15:49:39 by lfourmau         ###   ########lyon.fr   */
+/*   Updated: 2020/11/25 11:39:12 by lfourmau         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char *ft_strdup(const char *str)
 	char *cpy;
 
 	i = 0;
-	cpy = malloc(ft_strlen(str));
+	cpy = malloc(ft_strlen(str) + 1);
 	if (cpy == 0)
 		return (NULL);
 	while (str[i])
@@ -26,6 +26,6 @@ char *ft_strdup(const char *str)
 		cpy[i] = str[i];
 		i++;
 	}
-	free(cpy);
+	cpy[i] = 0;
 	return (cpy);
 }

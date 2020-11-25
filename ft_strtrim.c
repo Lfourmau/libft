@@ -6,13 +6,13 @@
 /*   By: lfourmau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 11:23:19 by lfourmau          #+#    #+#             */
-/*   Updated: 2020/11/24 15:59:54 by lfourmau         ###   ########lyon.fr   */
+/*   Updated: 2020/11/25 14:15:03 by lfourmau         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_same_char_strtrim(const char *set, char c)
+static int ft_same_char_strtrim(const char *set, char c)
 {
 	int i;
 
@@ -26,13 +26,30 @@ int ft_same_char_strtrim(const char *set, char c)
 	return (0);
 }
 
-//malloc a revoir (pas très propre)
+static int ft_check_str(char const *str, char const *set)
+{
+	int i;
+
+	i = 0;
+	while (str[i])
+	{
+		if (ft_same_char_strtrim(set, str[i]))
+			i++;
+		else
+			return (0);	
+	}
+	return (1);
+}
+
 char *ft_strtrim(char const *str, char const *set)
 {
 	char *start;
 	char *cpy;
+	if (str == 0)
+	return (0);
+	if (ft_check_str(str, set))
+		return ("");
 
-	cpy = malloc(ft_strlen(str));
 	while (ft_same_char_strtrim(set, *str))
 		str++;
 	start = (char *)str;
@@ -42,7 +59,14 @@ char *ft_strtrim(char const *str, char const *set)
 	while (ft_same_char_strtrim(set, *str))
 		str--;
 	str++; // -sinon dernier carac coupé
+	cpy = malloc(str - start + 1);
+	if (cpy == NULL)
+		return (NULL);
 	ft_strlcpy(cpy, start, str - start + 1);
 	return (cpy);
 }
-
+#include <stdio.h>
+int main()
+{
+	printf("%s\n",ft_strtrim("ebcdaaabcd", "abcdef"));
+}

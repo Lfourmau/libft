@@ -6,7 +6,7 @@
 /*   By: lfourmau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 11:19:30 by lfourmau          #+#    #+#             */
-/*   Updated: 2020/11/24 13:51:46 by lfourmau         ###   ########lyon.fr   */
+/*   Updated: 2020/11/25 09:06:43 by lfourmau         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,10 @@
 
 int ft_isprint(int nbr)
 {
-	if ((nbr >= 0 && nbr <= 31) || nbr == 127)
+	unsigned char nb;
+
+	nb = (unsigned char)nbr;
+	if (nbr <= 31 || nbr >= 127)
 		return (0);
 	return (1);
 }

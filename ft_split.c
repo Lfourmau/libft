@@ -6,7 +6,7 @@
 /*   By: lfourmau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 11:21:18 by lfourmau          #+#    #+#             */
-/*   Updated: 2020/11/24 16:00:43 by lfourmau         ###   ########lyon.fr   */
+/*   Updated: 2020/11/25 15:31:33 by lfourmau         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ char **ft_split(char const *str, char sep)
 	int i;
 
 	i = 0;
+	if (str == 0)
+		return (0);
 	lengthmax = ft_strlen(str) / 2 + 1;
 	chains = malloc(sizeof(char *) * lengthmax);
 	if (chains == NULL)

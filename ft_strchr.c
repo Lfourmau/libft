@@ -6,7 +6,7 @@
 /*   By: lfourmau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 11:21:29 by lfourmau          #+#    #+#             */
-/*   Updated: 2020/11/24 15:47:57 by lfourmau         ###   ########lyon.fr   */
+/*   Updated: 2020/11/25 09:44:30 by lfourmau         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,17 @@
 char *ft_strchr(const char *str, int c)
 {
 	int i;
+	char carac;
 
 	i = 0;
+	carac = (char)c;
 	while (str[i])
 	{
-		if (str[i] == c)
-			return ((char*)&str[i]); //pas castee avt mkfl
+		if (str[i] == carac)
+			return ((char*)&str[i]);
 		i++;
 	}
+	if (carac == 0)
+		return ((char *)&str[i]);
 	return (0);
 }
-

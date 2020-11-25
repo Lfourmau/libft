@@ -6,7 +6,7 @@
 /*   By: lfourmau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 11:16:57 by lfourmau          #+#    #+#             */
-/*   Updated: 2020/11/24 14:11:48 by lfourmau         ###   ########lyon.fr   */
+/*   Updated: 2020/11/25 11:15:55 by lfourmau         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,26 +22,28 @@ static int ft_isspace(char c)
 int ft_atoi(const char *str)
 {
 	int i;
+	int j;
 	int res;
 	int sign;
 
 	sign = 1;
 	res = 0;
 	i = 0;
+	j = 0;
 	while (ft_isspace(str[i]))
 		i++;
+	if (str[i] == '-')
+		sign *= -1;
 	if (str[i] == '+' || str[i] == '-')
-	{
-		if (str[i] == '-')
-			sign *= -1;
 		i++;
-	}
 	while (ft_isdigit(str[i]))
 	{
-		res = res * 10 + str[i] - 48;
-		i++;
+		res = res * 10 + str[i++] - 48;
+		j++;
 	}
-	if (res)
-		return (res * sign);
-	return (0);
+	if (j > 18 && sign == -1)
+		return (0);
+	else if (j > 18 && sign == 1)
+		return (-1);
+	return (res * sign);
 }

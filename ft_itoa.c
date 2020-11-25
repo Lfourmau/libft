@@ -6,13 +6,13 @@
 /*   By: lfourmau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 11:19:57 by lfourmau          #+#    #+#             */
-/*   Updated: 2020/11/24 15:38:39 by lfourmau         ###   ########lyon.fr   */
+/*   Updated: 2020/11/25 14:19:41 by lfourmau         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int ft_nbdigits_itoa(int n)
+static int ft_nbdigits_itoa(long int n)
 {
 	int i;
 
@@ -31,7 +31,7 @@ static int ft_nbdigits_itoa(int n)
 	return (i);
 }
 
-static char *ft_recursive_itoa(int nb, char *result, int index)
+static char *ft_recursive_itoa(long int nb, char *result, int index)
 {
 	if (nb >= 10)
 		ft_recursive_itoa(nb / 10, result,  index - 1);
@@ -43,16 +43,19 @@ char *ft_itoa(int nb)
 {
 	char *result;
 	int index;
+	long int nbr;
 
 	index = ft_nbdigits_itoa(nb);
-	result = malloc(sizeof(char) * ft_nbdigits_itoa(nb));
+	nbr = nb;
+	result = malloc(sizeof(char) * ft_nbdigits_itoa(nbr) + 1);
 	if (result == NULL)
 		return (NULL);
-	if (nb < 0)
+	if (nbr < 0)
 	{
 		result[0] = '-';
-		nb *= -1;
+		nbr *= -1;
 	}
-	ft_recursive_itoa(nb, result, index);
+	result[index] = 0;
+	ft_recursive_itoa(nbr, result, index);
 	return (result);
 }

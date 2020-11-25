@@ -6,7 +6,7 @@
 /*   By: lfourmau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 11:21:51 by lfourmau          #+#    #+#             */
-/*   Updated: 2020/11/24 13:55:04 by lfourmau         ###   ########lyon.fr   */
+/*   Updated: 2020/11/25 15:09:35 by lfourmau         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,9 @@ char *ft_strjoin(char const *prefixe, char const *suffixe)
 
 	i = 0;
 	j = 0;
-	size = ft_strlen(prefixe) + ft_strlen(suffixe);
+	if (prefixe == 0)
+		return ("");
+	size = ft_strlen(prefixe) + ft_strlen(suffixe) + 1;
 	concat = malloc(sizeof(char) * size);
 	if (concat == 0)
 		return (NULL);
