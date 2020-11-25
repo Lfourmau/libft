@@ -49,24 +49,18 @@ char *ft_strtrim(char const *str, char const *set)
 	return (0);
 	if (ft_check_str(str, set))
 		return ("");
-
 	while (ft_same_char_strtrim(set, *str))
 		str++;
 	start = (char *)str;
 	while (*str)
 		str++;
-	str--; //sinon dernier carac coupé
+	str--;
 	while (ft_same_char_strtrim(set, *str))
 		str--;
-	str++; // -sinon dernier carac coupé
+	str++;
 	cpy = malloc(str - start + 1);
 	if (cpy == NULL)
 		return (NULL);
 	ft_strlcpy(cpy, start, str - start + 1);
 	return (cpy);
-}
-#include <stdio.h>
-int main()
-{
-	printf("%s\n",ft_strtrim("ebcdaaabcd", "abcdef"));
 }
