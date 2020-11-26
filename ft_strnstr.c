@@ -6,13 +6,13 @@
 /*   By: lfourmau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 11:22:53 by lfourmau          #+#    #+#             */
-/*   Updated: 2020/11/24 15:54:57 by lfourmau         ###   ########lyon.fr   */
+/*   Updated: 2020/11/26 01:47:45 by lfourmau         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strnstr(const char *haystack, const char *needle, size_t size)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t size)
 {
 	unsigned int i;
 	unsigned int j;
@@ -20,7 +20,7 @@ char *ft_strnstr(const char *haystack, const char *needle, size_t size)
 	i = 0;
 	j = 0;
 	if (needle[j] == 0)
-		return ((char *)haystack);//pas cast
+		return ((char *)haystack);
 	while (haystack[i])
 	{
 		while (haystack[i] && haystack[i] == needle[j] && i < size)
@@ -29,9 +29,9 @@ char *ft_strnstr(const char *haystack, const char *needle, size_t size)
 			j++;
 		}
 		if (needle[j] == 0)
-			return ((char *)&haystack[i - j]); //pas cast avant mkfile
+			return ((char *)&haystack[i - j]);
 		i++;
 		j = 0;
 	}
-	return (0); //needle pas trouvé
+	return (0);
 }

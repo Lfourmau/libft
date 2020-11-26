@@ -6,27 +6,23 @@
 /*   By: lfourmau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 11:21:51 by lfourmau          #+#    #+#             */
-/*   Updated: 2020/11/25 15:09:35 by lfourmau         ###   ########lyon.fr   */
+/*   Updated: 2020/11/26 02:14:05 by lfourmau         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-//Vérifier si c'est bien ce qui est attendu
-char *ft_strjoin(char const *prefixe, char const *suffixe)
+char	*ft_strjoin(char const *prefixe, char const *suffixe)
 {
-	char *concat;
-	int i;
-	int j;
-	int size;
+	char	*concat;
+	int		i;
+	int		j;
 
 	i = 0;
 	j = 0;
 	if (prefixe == 0)
-		return ("");
-	size = ft_strlen(prefixe) + ft_strlen(suffixe) + 1;
-	concat = malloc(sizeof(char) * size);
-	if (concat == 0)
+		return ((char *)suffixe);
+	if (!(concat = malloc((ft_strlen(prefixe) + ft_strlen(suffixe) + 1))))
 		return (NULL);
 	while (prefixe[i])
 	{
@@ -44,4 +40,3 @@ char *ft_strjoin(char const *prefixe, char const *suffixe)
 	concat[j] = 0;
 	return (concat);
 }
-

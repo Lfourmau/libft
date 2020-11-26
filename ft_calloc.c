@@ -6,13 +6,13 @@
 /*   By: lfourmau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 11:17:22 by lfourmau          #+#    #+#             */
-/*   Updated: 2020/11/25 11:31:09 by lfourmau         ###   ########lyon.fr   */
+/*   Updated: 2020/11/26 01:34:33 by lfourmau         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void *ft_calloc(size_t nbelements, size_t size)
+void	*ft_calloc(size_t nbelements, size_t size)
 {
 	void *ptr;
 

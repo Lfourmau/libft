@@ -6,16 +6,16 @@
 /*   By: lfourmau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 11:22:05 by lfourmau          #+#    #+#             */
-/*   Updated: 2020/11/24 13:55:18 by lfourmau         ###   ########lyon.fr   */
+/*   Updated: 2020/11/26 02:07:04 by lfourmau         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-unsigned int ft_strlcat(char *dst, const char *src, size_t dstsize)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	unsigned int i;
-	unsigned int j;
+	size_t i;
+	size_t j;
 
 	i = 0;
 	j = 0;

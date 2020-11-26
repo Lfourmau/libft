@@ -6,16 +6,16 @@
 /*   By: lfourmau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 11:21:29 by lfourmau          #+#    #+#             */
-/*   Updated: 2020/11/25 09:44:30 by lfourmau         ###   ########lyon.fr   */
+/*   Updated: 2020/11/26 01:43:33 by lfourmau         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strchr(const char *str, int c)
+char	*ft_strchr(const char *str, int c)
 {
-	int i;
-	char carac;
+	int		i;
+	char	carac;
 
 	i = 0;
 	carac = (char)c;

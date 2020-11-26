@@ -6,13 +6,13 @@
 /*   By: lfourmau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 11:19:30 by lfourmau          #+#    #+#             */
-/*   Updated: 2020/11/25 09:06:43 by lfourmau         ###   ########lyon.fr   */
+/*   Updated: 2020/11/26 01:37:14 by lfourmau         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_isprint(int nbr)
+int	ft_isprint(int nbr)
 {
 	unsigned char nb;
 

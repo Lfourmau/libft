@@ -6,13 +6,13 @@
 /*   By: lfourmau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 14:34:07 by lfourmau          #+#    #+#             */
-/*   Updated: 2020/11/25 15:30:11 by lfourmau         ###   ########lyon.fr   */
+/*   Updated: 2020/11/26 01:41:25 by lfourmau         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putstr_fd(char *s, int fd)
+void	ft_putstr_fd(char *s, int fd)
 {
 	int i;
 

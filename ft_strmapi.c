@@ -6,17 +6,17 @@
 /*   By: lfourmau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 13:50:40 by lfourmau          #+#    #+#             */
-/*   Updated: 2020/11/25 15:27:02 by lfourmau         ###   ########lyon.fr   */
+/*   Updated: 2020/11/26 01:47:05 by lfourmau         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	int i;
-	char *result;
-	
+	int		i;
+	char	*result;
+
 	i = 0;
 	if (s == 0)
 		return (0);

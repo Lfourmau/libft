@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lfourmau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/23 14:44:16 by lfourmau          #+#    #+#             */
-/*   Updated: 2020/11/26 01:41:08 by lfourmau         ###   ########lyon.fr   */
+/*   Created: 2020/11/26 05:14:28 by lfourmau          #+#    #+#             */
+/*   Updated: 2020/11/26 06:10:51 by lfourmau         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr_fd(int n, int fd)
+void ft_lstadd_back(t_list **alst, t_list *new)
 {
-	long int nb;
-
-	nb = n;
-	if (nb < 0)
+	if (!*alst)
+		*alst = new;
+	else
 	{
-		ft_putchar_fd('-', fd);
-		nb *= -1;
+	t_list *pnext;
+
+	pnext = *alst;
+	while (pnext->next != NULL)
+		pnext = pnext->next;
+	pnext->next = new;
+	new->next = NULL;
 	}
-	if (nb >= 10)
-		ft_putnbr_fd(nb / 10, fd);
-	ft_putchar_fd(nb % 10 + 48, fd);
 }

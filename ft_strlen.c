@@ -6,17 +6,18 @@
 /*   By: lfourmau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 11:22:32 by lfourmau          #+#    #+#             */
-/*   Updated: 2020/11/24 15:49:29 by lfourmau         ###   ########lyon.fr   */
+/*   Updated: 2020/11/26 01:46:00 by lfourmau         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t ft_strlen(const char *str)
+size_t	ft_strlen(const char *str)
 {
 	int i;
+
 	i = 0;
-	while(str[i])
+	while (str[i])
 		i++;
 	return (i);
 }

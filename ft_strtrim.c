@@ -6,13 +6,13 @@
 /*   By: lfourmau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 11:23:19 by lfourmau          #+#    #+#             */
-/*   Updated: 2020/11/25 14:15:03 by lfourmau         ###   ########lyon.fr   */
+/*   Updated: 2020/11/26 02:54:47 by lfourmau         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int ft_same_char_strtrim(const char *set, char c)
+static int	ft_same_char_strtrim(const char *set, char c)
 {
 	int i;
 
@@ -26,7 +26,7 @@ static int ft_same_char_strtrim(const char *set, char c)
 	return (0);
 }
 
-static int ft_check_str(char const *str, char const *set)
+static int	ft_check_str(char const *str, char const *set)
 {
 	int i;
 
@@ -36,17 +36,18 @@ static int ft_check_str(char const *str, char const *set)
 		if (ft_same_char_strtrim(set, str[i]))
 			i++;
 		else
-			return (0);	
+			return (0);
 	}
 	return (1);
 }
 
-char *ft_strtrim(char const *str, char const *set)
+char		*ft_strtrim(char const *str, char const *set)
 {
 	char *start;
 	char *cpy;
+
 	if (str == 0)
-	return (0);
+		return (0);
 	if (ft_check_str(str, set))
 		return ("");
 	while (ft_same_char_strtrim(set, *str))
@@ -63,4 +64,11 @@ char *ft_strtrim(char const *str, char const *set)
 		return (NULL);
 	ft_strlcpy(cpy, start, str - start + 1);
 	return (cpy);
+}
+#include <stdio.h>
+int main()
+{
+	char set[] = "\t \n";
+	char s1[] = "     			";
+printf("%s\n", ft_strtrim(s1, set));
 }

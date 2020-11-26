@@ -6,17 +6,17 @@
 /*   By: lfourmau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 11:23:05 by lfourmau          #+#    #+#             */
-/*   Updated: 2020/11/25 09:44:16 by lfourmau         ###   ########lyon.fr   */
+/*   Updated: 2020/11/26 01:48:06 by lfourmau         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strrchr(const char *str, int c)
+char	*ft_strrchr(const char *str, int c)
 {
-	char *ptr;
-	char carac;
-	int i;
+	char	*ptr;
+	char	carac;
+	int		i;
 
 	i = 0;
 	ptr = 0;

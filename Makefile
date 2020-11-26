@@ -6,7 +6,7 @@
 #    By: lfourmau <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/24 15:05:03 by lfourmau          #+#    #+#              #
-#    Updated: 2020/11/24 16:12:15 by lfourmau         ###   ########lyon.fr    #
+#    Updated: 2020/11/26 08:13:37 by lfourmau         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,12 @@ SRCS = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c \
 	ft_strrchr.c ft_strtrim.c ft_substr.c ft_tolower.c ft_toupper.c \
 	ft_putchar_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_putstr_fd.c ft_split.c 
 
+SRCSBONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
+			ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c
+
 OBJS = ${SRCS:.c=.o}
+
+OBJSBONUS = ${SRCSBONUS:.c=.o}
 
 RM = rm -f
 
@@ -36,13 +41,16 @@ RM = rm -f
 ${NAME} : ${OBJS}
 	ar -rc ${NAME} ${OBJS}
 
+bonus : ${OBJSBONUS}
+	ar -rc ${NAME} ${OBJS} ${OBJSBONUS}
+
 all : ${NAME}
 
 so :
 	${CC} -shared -o -libft.so ${OBJS}
 
 clean : 
-	${RM} ${OBJS}
+	${RM} ${OBJS} ${OBJSBONUS}
 
 fclean : clean
 	${RM} ${NAME}

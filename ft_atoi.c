@@ -6,20 +6,20 @@
 /*   By: lfourmau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 11:16:57 by lfourmau          #+#    #+#             */
-/*   Updated: 2020/11/25 11:15:55 by lfourmau         ###   ########lyon.fr   */
+/*   Updated: 2020/11/26 01:34:09 by lfourmau         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int ft_isspace(char c)
+static int	ft_isspace(char c)
 {
-	if((c <= 13 && c >= 9) || c == ' ')
-			return (1);
+	if ((c <= 13 && c >= 9) || c == ' ')
+		return (1);
 	return (0);
 }
 
-int ft_atoi(const char *str)
+int			ft_atoi(const char *str)
 {
 	int i;
 	int j;

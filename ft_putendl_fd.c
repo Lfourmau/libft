@@ -6,16 +6,16 @@
 /*   By: lfourmau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 14:37:33 by lfourmau          #+#    #+#             */
-/*   Updated: 2020/11/25 15:30:39 by lfourmau         ###   ########lyon.fr   */
+/*   Updated: 2020/11/26 01:43:05 by lfourmau         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_putendl_fd(char *s, int fd)
+void	ft_putendl_fd(char *s, int fd)
 {
 	int i;
-	
+
 	i = 0;
 	if (s != 0)
 	{
