@@ -6,17 +6,15 @@
 #    By: lfourmau <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/24 15:05:03 by lfourmau          #+#    #+#              #
-#    Updated: 2020/11/27 13:30:07 by lfourmau         ###   ########lyon.fr    #
+#    Updated: 2020/11/27 15:27:22 by lfourmau         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
-SRC_DIR = ${SRCS}
-
 CC = gcc
 
-CFLAGS = -Wall -Wextra -Werror -fPIC
+CFLAGS = -Wall -Wextra -Werror
 
 SRCS = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c \
 	ft_isascii.c ft_isdigit.c ft_isprint.c ft_itoa.c ft_memccpy.c \
@@ -36,14 +34,13 @@ OBJSBONUS = ${SRCSBONUS:.c=.o}
 
 RM = rm -f
 
-all : ${NAME}
-
-.c.o :
-	${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
+%.o : %.c
+	${CC} ${CFLAGS} -c $< -o $@
 
 $(NAME) : ${OBJS}
+	ar -rc ${NAME} $?
 
-	ar -rc ${NAME} ${OBJS}
+all : ${NAME}
 
 bonus : ${OBJSBONUS} ${OBJS}
 	ar -rc ${NAME} ${OBJS} ${OBJSBONUS}
