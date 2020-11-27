@@ -6,26 +6,27 @@
 /*   By: lfourmau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 06:23:44 by lfourmau          #+#    #+#             */
-/*   Updated: 2020/11/26 08:12:35 by lfourmau         ###   ########lyon.fr   */
+/*   Updated: 2020/11/27 10:22:00 by lfourmau         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_lstclear(t_list **lst, void (*del)(void*))
+void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
+	t_list	*tosupp;
+	t_list	*tmp;
+
 	if (lst != NULL)
 	{
-		t_list	*tosupp;
-		t_list	*tmp;
-
 		tosupp = *lst;
-		while (tosupp->next != NULL)
+		while (tosupp)
 		{
 			tmp = tosupp;
-			free(tosupp);
 			(*del)(tmp->content);
+			free(tosupp);
 			tosupp = tmp->next;
 		}
+		*lst = NULL;
 	}
 }
