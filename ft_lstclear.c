@@ -22,10 +22,10 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 		tosupp = *lst;
 		while (tosupp)
 		{
-			tmp = tosupp;
-			(*del)(tmp->content);
+			tmp = tosupp->next;
+			(*del)(tosupp->content);
 			free(tosupp);
-			tosupp = tmp->next;
+			tosupp = tmp;
 		}
 		*lst = NULL;
 	}

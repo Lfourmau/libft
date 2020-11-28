@@ -34,8 +34,9 @@ OBJSBONUS = ${SRCSBONUS:.c=.o}
 
 RM = rm -f
 
-%.o : %.c
-	${CC} ${CFLAGS} -c $< -o $@
+%.o : %.c libft.h
+	@echo -e "\033[0;32m [SUCCESS] ------------> \033[0m       \033[0;33m fichier compilé : \033[0m" $<
+	@${CC} ${CFLAGS} -c $< -o $@
 
 $(NAME) : ${OBJS}
 	ar -rc ${NAME} $?
@@ -43,7 +44,8 @@ $(NAME) : ${OBJS}
 all : ${NAME}
 
 bonus : ${OBJSBONUS} ${OBJS}
-	ar -rc ${NAME} ${OBJS} ${OBJSBONUS}
+	@echo -e "\033[0;32m [SUCCESS] ------------> \033[0m       \033[0;33m fichier compilé : \033[0m" $<
+	@ar -rc ${NAME} ${OBJS} ${OBJSBONUS}
 
 clean : 
 	${RM} ${OBJS} ${OBJSBONUS}
