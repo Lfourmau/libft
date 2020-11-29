@@ -6,7 +6,7 @@
 #    By: lfourmau <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/24 15:05:03 by lfourmau          #+#    #+#              #
-#    Updated: 2020/11/27 15:27:22 by lfourmau         ###   ########lyon.fr    #
+#    Updated: 2020/11/29 13:57:36 by lfourmau         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,24 +34,34 @@ OBJSBONUS = ${SRCSBONUS:.c=.o}
 
 RM = rm -f
 
+_END = \033[0m
+_DIM = \033[2m
+_YELLOW = \033[33m
+_GREEN = \033[92m
+_RED = \033[91m
+_ROSE = \033[95m
+_CYAN = \033[96m
+
 %.o : %.c libft.h
-	@echo -e "\033[0;32m [SUCCESS] ------------> \033[0m       \033[0;33m fichier compilé : \033[0m" $<
+	@echo "${_GREEN}${_DIM} ✅ SUCCESS ✅  ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ${_END}${_YELLOW}| $< |${_END}"
 	@${CC} ${CFLAGS} -c $< -o $@
 
 $(NAME) : ${OBJS}
-	ar -rc ${NAME} $?
+	@echo "${_GREEN} Action reussie pour  : ${_CYAN} $?"
+	@ar -rc ${NAME} $?
 
 all : ${NAME}
 
 bonus : ${OBJSBONUS} ${OBJS}
-	@echo -e "\033[0;32m [SUCCESS] ------------> \033[0m       \033[0;33m fichier compilé : \033[0m" $<
+	@echo "${_GREEN}Bonus ajoutes${_END}"
 	@ar -rc ${NAME} ${OBJS} ${OBJSBONUS}
 
 clean : 
-	${RM} ${OBJS} ${OBJSBONUS}
+	@echo "${_RED} Fichiers detruits${_END}"
+	@${RM} ${OBJS} ${OBJSBONUS}
 
 fclean : clean
-	${RM} ${NAME}
+	@${RM} ${NAME}
 
 re : fclean all
 

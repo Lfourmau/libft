@@ -6,44 +6,39 @@
 /*   By: lfourmau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 11:21:18 by lfourmau          #+#    #+#             */
-/*   Updated: 2020/11/26 02:11:00 by lfourmau         ###   ########lyon.fr   */
+/*   Updated: 2020/11/29 11:47:59 by lfourmau         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int ft_countwords(const char *str, char sep)
+static int	ft_countwords(const char *str, char sep)
 {
-	int i;
-	char *strcount;
+	int		i;
+	char	*strcount;
 
 	strcount = (char *)str;
 	i = 0;
 	while (*strcount)
 	{
-		while (*strcount &&*strcount == sep)
+		while (*strcount && *strcount == sep)
 			strcount++;
-		while (*strcount &&*strcount != sep)
+		while (*strcount && *strcount != sep)
 			strcount++;
 		i++;
 	}
 	return (i);
 }
 
-static char *ft_malloc_chain(char **chains, char *start, char const *str)
+static char	**ft_free_chains(char **chains, int i)
 {
-	char *ptr;
-
-	ptr = malloc(str - start + 1);
-	if (!ptr)
-	{
-		free(chains);
-		return (NULL);
-	}
-	return (ptr);
+	while (--i >= 0)
+		free(chains[i]);
+	free(chains);
+	return (NULL);
 }
 
-char	**ft_split(char const *str, char sep)
+char		**ft_split(char const *str, char sep)
 {
 	char	**chains;
 	char	*start;
@@ -61,8 +56,8 @@ char	**ft_split(char const *str, char sep)
 		start = (char *)str;
 		while (*str && *str != sep)
 			str++;
-		if (!(chains[i] = ft_malloc_chain(chains, start, str)))
-			return (NULL);
+		if (!(chains[i] = malloc(sizeof(char) * (str - start + 1))))
+			return (ft_free_chains(chains, i));
 		ft_strlcpy(chains[i], start, str - start + 1);
 		chains[i][str - start] = 0;
 		if (start != str)
