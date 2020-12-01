@@ -6,13 +6,13 @@
 /*   By: lfourmau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 11:21:18 by lfourmau          #+#    #+#             */
-/*   Updated: 2020/11/29 11:47:59 by lfourmau         ###   ########lyon.fr   */
+/*   Updated: 2020/12/01 16:28:47 by lfourmau         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_countwords(const char *str, char sep)
+static int	ft_ctw(const char *str, char sep)
 {
 	int		i;
 	char	*strcount;
@@ -45,9 +45,7 @@ char		**ft_split(char const *str, char sep)
 	int		i;
 
 	i = 0;
-	if (str == 0)
-		return (0);
-	if (!(chains = malloc(sizeof(char *) * (ft_countwords(str, sep) + 1))))
+	if (!str || !(chains = malloc(sizeof(char *) * (ft_ctw(str, sep) + 1))))
 		return (NULL);
 	while (*str)
 	{
@@ -56,12 +54,13 @@ char		**ft_split(char const *str, char sep)
 		start = (char *)str;
 		while (*str && *str != sep)
 			str++;
-		if (!(chains[i] = malloc(sizeof(char) * (str - start + 1))))
-			return (ft_free_chains(chains, i));
-		ft_strlcpy(chains[i], start, str - start + 1);
-		chains[i][str - start] = 0;
 		if (start != str)
+		{
+			if (!(chains[i] = malloc(sizeof(char) * (str - start + 1))))
+				return (ft_free_chains(chains, i));
+			ft_strlcpy(chains[i], start, str - start + 1);
 			i++;
+		}
 	}
 	chains[i] = 0;
 	return (chains);
