@@ -6,18 +6,11 @@
 /*   By: lfourmau <lfourmau@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 11:16:57 by lfourmau          #+#    #+#             */
-/*   Updated: 2020/12/04 13:57:17 by lfourmau         ###   ########lyon.fr   */
+/*   Updated: 2020/12/21 13:12:07 by lfourmau         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static int	ft_isspace(char c)
-{
-	if ((c <= 13 && c >= 9) || c == ' ')
-		return (1);
-	return (0);
-}
 
 int			ft_atoi(const char *str)
 {
