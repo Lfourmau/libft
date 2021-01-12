@@ -6,7 +6,7 @@
 /*   By: lfourmau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 01:51:34 by lfourmau          #+#    #+#             */
-/*   Updated: 2021/01/04 11:02:20 by lfourmau         ###   ########lyon.fr   */
+/*   Updated: 2021/01/12 18:44:15 by lfourmau         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,8 +70,6 @@ t_list			*ft_lstmap(t_list *lst, void *(*f)(void *),\
 				void (*del)(void *));
 int				ft_isspace(char c);
 int				ft_atoi_base(char *str, char *base);
-char			*ft_itoa_base(size_t nb, char *base);
-char			*ft_convert_base(char *nbr, char *base_from, char *base_to);
 void			ft_putnbr_base(int nbr, char *base);
 
 #endif
