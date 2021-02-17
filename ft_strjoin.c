@@ -6,37 +6,37 @@
 /*   By: lfourmau <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/23 11:21:51 by lfourmau          #+#    #+#             */
-/*   Updated: 2020/11/26 02:14:05 by lfourmau         ###   ########lyon.fr   */
+/*   Updated: 2021/02/17 09:58:20 by lfourmau         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *prefixe, char const *suffixe)
+char		*ft_strjoin(char const *prefixe, char const *suffixe)
 {
-	char	*concat;
-	int		i;
-	int		j;
+	char		*concat;
+	int			len;
+	size_t		i;
+	size_t		j;
 
 	i = 0;
 	j = 0;
-	if (prefixe == 0)
-		return ((char *)suffixe);
-	if (!(concat = malloc((ft_strlen(prefixe) + ft_strlen(suffixe) + 1))))
+	if (!prefixe && !suffixe)
 		return (NULL);
-	while (prefixe[i])
+	len = ft_strlen(prefixe) + ft_strlen(suffixe);
+	if (!(concat = malloc(sizeof(char) * (len + 1))))
+		return (NULL);
+	while (i < ft_strlen(prefixe))
 	{
-		concat[j] = prefixe[i];
+		concat[i] = prefixe[i];
 		i++;
+	}
+	while (j < ft_strlen(suffixe))
+	{
+		concat[i + j] = suffixe[j];
 		j++;
 	}
-	i = 0;
-	while (suffixe[i])
-	{
-		concat[j] = suffixe[i];
-		i++;
-		j++;
-	}
-	concat[j] = 0;
+	concat[len] = 0;
+	free((char *)prefixe);
 	return (concat);
 }
